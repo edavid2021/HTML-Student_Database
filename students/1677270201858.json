@@ -1,7 +1,7 @@
 {
-  "record_id": 1677270201858,
+  "record_id": "1677270201858",
   "first_name": "John",
   "last_name": "Baptiste",
-  "gpa": "4.0",
-  "enrolled": "True"
+  "gpa": "1.3",
+  "enrolled": "False"
 }
