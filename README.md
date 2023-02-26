@@ -1,1 +1,12 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10259610&assignment_repo_type=AssignmentRepo)
+# Studentserver.js
+## Emmanuel David / Z23619905
+### Node.js and API Practice
+
+
+
+## In this assignment, I was able to use an API platform named Postman to test multiple endpoints. For Example;
+* Created a new student using POST
+* Updated a student by ID using PUT
+* Deleted a student by using DELETE
+* Display a single student by using GET
+* Dislay all the students by using GET
