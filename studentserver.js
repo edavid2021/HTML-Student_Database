@@ -10,6 +10,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(express.static('./public'));
 
+/**
+ * posts student data into a .json file
+ * @param {string} record_id - record id of student
+ * @param {string} last_name - last name of student
+ * @param {number} gpa - gpa of student
+ * @param {boolean} enrolled - enrolled status of student
+ * @returns {object} - returns a json object with record_id and message
+ */
 app.post('/students', function(req, res) {
   var record_id = new Date().getTime();
 
@@ -37,6 +45,15 @@ app.post('/students', function(req, res) {
   
 }); //end post method
 
+/**
+ * gets a student record file
+ * @param {string} record_id - record id of student
+ * @param {string} first_name - first name of student
+ * @param {string} last_name - last name of student
+ * @param {number} gpa - gpa of student
+ * @param {boolean} enrolled - enrolled status of student
+ * @returns {object} - returns a json object with record_id and message
+ */
 app.get('/students/:record_id', function(req, res) {
   var record_id = req.params.record_id;
 
@@ -86,6 +103,15 @@ app.get('/students', function(req, res) {
 
 });
 
+/**
+ * updates a student record file
+ * @param {string} record_id - record id of student
+ * @param {string} first_name - first name of student
+ * @param {string} last_name - last name of student
+ * @param {number} gpa - gpa of student
+ * @param {boolean} enrolled - enrolled status of student
+ * @returns {object} - returns a json object with record_id and message
+ */
 app.put('/students/:record_id', function(req, res) {
   var record_id = req.params.record_id;
   var fname = "students/" + record_id + ".json";
@@ -128,6 +154,15 @@ app.put('/students/:record_id', function(req, res) {
 
 }); //end put method
 
+/**
+ * deletes a student record
+ * @param {string} record_id - record id of student
+ * @param {string} first_name - first name of student
+ * @param {string} last_name - last name of student
+ * @param {number} gpa - gpa of student
+ * @param {boolean} enrolled - enrolled status of student
+ * @returns {object} - returns a json object with record_id and message
+ */
 app.delete('/students/:record_id', function(req, res) {
   var record_id = req.params.record_id;
   var fname = "students/" + record_id + ".json";
