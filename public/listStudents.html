@@ -1,8 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head> </head>
+  <head>
+    <title>List Students</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
 
   <body>
+    <button onclick="listStudents()">List Students</button>
+    <br />
+    <br />
+    <div id="mydiv" name="mydiv"></div>
+    <script>
+      function listStudents() {
+        var urla = "http://localhost:5678/students";
+
+        $.ajax({
+          url: urla,
+          type: "get",
+          success: function (response) {
+            var temp1 = JSON.stringify(response.students);
+            $("#mydiv").text(temp1);
+          },
+          error: function (xhr) {
+            $("#mydiv").text("error: " + xhr);
+          },
+        });
+      }
+    </script>
+
     <a href="index.html">INDEX</a>
   </body>
 </html>
