@@ -2,17 +2,42 @@
 <html>
   <head>
     <title>Delete Votes</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    <label for="rID">Record ID:</label>
-    <input type="text" id="rID" name="rID" /><br /><br />
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header"></div>
+        <ol class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="addStudent.html">Add Student</a></li>
+          <li><a href="updateStudent.html">Update Student</a></li>
+          <li><a href="deleteStudent.html">Delete Student</a></li>
+          <li><a href="displayStudent.html">Display Student</a></li>
+          <li><a href="listStudents.html">List All</a></li>
+        </ol>
+      </div>
+    </nav>
 
-    <button onclick="deleteStudent()">Delete Student</button>
-    <br />
-    <br />
-    <div id="mydiv" name="mydiv"></div>
+    <div class="container">
+      <h1>Delete Student</h1>
+      <p>Enter the student's record ID.</p>
+
+      <label for="rID">Record ID:</label>
+      <input type="text" id="rID" name="rID" /><br /><br />
+
+      <button class="btn-primary" deleteStudent()">Delete Student</button>
+      <br />
+      <br />
+      <div id="mydiv" name="mydiv"></div>
+    </div>
     <script>
       function deleteStudent() {
         var rID_val = $("#rID").val();
@@ -31,6 +56,9 @@
       }
     </script>
 
-    <a href="index.html">INDEX</a>
+    <footer class="container-fluid text-center">
+      <p>Made by Emmanuel (Manny) David</p>
+      <p>Z23619905</p>
+    </footer>
   </body>
 </html>
