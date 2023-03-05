@@ -16,9 +16,10 @@
     <script>
       function deleteStudent() {
         var rID_val = $("#rID").val();
+        var urla = "http://localhost:5678/students/" + rID_val;
 
         $.ajax({
-          url: "http://localhost:5678/students" + rID_val,
+          url: urla,
           type: "delete",
           success: function () {
             $("#mydiv").text("Successfully Deleted");
