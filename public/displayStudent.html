@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head> </head>
+  <head>
+    <title>Display Student</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
 
   <body>
+    
+  <label for="rID"> Get a Student by ID:</label>
+  <input type="text" id="rID" name="rID"><br><br>
+
+  <button onclick="displayStudent()">Submit</button>
+  <br>
+</br>
+
+  <div id="mydiv" name="mydiv"></div>
+  <script>
+
+    function displayStudent() {
+        var rID_val = $("#rID").val();
+        var urla = "http://localhost:5678/students/"+rID_val;
+      $.ajax({
+        url: urla,
+        type: "get",
+        success: function(response) {
+          $("#mydiv").text("sucess:" + response);
+        },
+        error: function(xhr) {
+          $("#mydiv").text('error: ' + xhr);
+        }
+      });
+    }
+    
+  </script>
     <a href="index.html">INDEX</a>
   </body>
 </html>
