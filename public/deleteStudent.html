@@ -1,8 +1,35 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <body>
-      <a href="index.html">INDEX</a>
-    </body>
+    <title>Delete Votes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
+
+  <body>
+    <label for="rID">Record ID:</label>
+    <input type="text" id="rID" name="rID" /><br /><br />
+
+    <button onclick="deleteStudent()">Delete Student</button>
+    <br />
+    <br />
+    <div id="mydiv" name="mydiv"></div>
+    <script>
+      function deleteStudent() {
+        var rID_val = $("#rID").val();
+
+        $.ajax({
+          url: "http://localhost:5678/students" + rID_val,
+          type: "delete",
+          success: function () {
+            $("#mydiv").text("Successfully Deleted");
+          },
+          error: function (xhr) {
+            $("#mydiv").text("error: " + xhr);
+          },
+        });
+      }
+    </script>
+
+    <a href="index.html">INDEX</a>
+  </body>
 </html>
