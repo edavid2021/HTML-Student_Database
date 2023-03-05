@@ -2,37 +2,62 @@
 <html>
   <head>
     <title>Display Student</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-    
-  <label for="rID"> Get a Student by ID:</label>
-  <input type="text" id="rID" name="rID"><br><br>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header"></div>
+        <ol class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="addStudent.html">Add Student</a></li>
+          <li><a href="updateStudent.html">Update Student</a></li>
+          <li><a href="deleteStudent.html">Delete Student</a></li>
+          <li><a href="displayStudent.html">Display Student</a></li>
+          <li><a href="listStudents.html">List All</a></li>
+        </ol>
+      </div>
+    </nav>
 
-  <button onclick="displayStudent()">Submit</button>
-  <br>
-</br>
+    <div class="container">
+      <h1>Display Student</h1>
+      <p>Enter the student's record ID.</p>
 
-  <div id="mydiv" name="mydiv"></div>
-  <script>
+      <label for="rID"> Get a Student by ID:</label>
+      <input type="text" id="rID" name="rID" /><br /><br />
 
-    function displayStudent() {
-        var rID_val = $("#rID").val();
-        var urla = "http://localhost:5678/students/"+rID_val;
-      $.ajax({
-        url: urla,
-        type: "get",
-        success: function(response) {
-          $("#mydiv").text("sucess:" + response);
-        },
-        error: function(xhr) {
-          $("#mydiv").text('error: ' + xhr);
+      <button class="btn-primary" onclick="displayStudent()">Submit</button>
+      <br />
+      <br />
+
+      <div id="mydiv" name="mydiv"></div>
+      <script>
+        function displayStudent() {
+          var rID_val = $("#rID").val();
+          var urla = "http://localhost:5678/students/" + rID_val;
+          $.ajax({
+            url: urla,
+            type: "get",
+            success: function (response) {
+              $("#mydiv").text(response);
+            },
+            error: function (xhr) {
+              $("#mydiv").text("error: " + xhr);
+            },
+          });
         }
-      });
-    }
-    
-  </script>
-    <a href="index.html">INDEX</a>
+      </script>
+    </div>
+    <footer class="container-fluid text-center">
+      <p>Made by Emmanuel (Manny) David</p>
+      <p>Z23619905</p>
+    </footer>
   </body>
 </html>
