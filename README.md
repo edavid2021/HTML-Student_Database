@@ -1,12 +1,7 @@
-# Studentserver.js
+# HTML Implementation for Studentserver.js
+
 ## Emmanuel David / Z23619905
-### Node.js and API Practice
 
+### Node.js Front-End and Back-End Implementation
 
-
-## In this assignment, I was able to use an API platform named Postman to test multiple endpoints. For Example;
-* Created a new student using POST
-* Updated a student by ID using PUT
-* Deleted a student by using DELETE
-* Display a single student by using GET
-* Dislay all the students by using GET
+In this assignment, I was able to link the back end studentserver.js to multiple html files then proceeded to use bootstrap to beautify it.
