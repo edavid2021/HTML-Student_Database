@@ -1,5 +1,6 @@
 # HTML Implementation for Studentserver.js
-
+ <img src= "ezgif.com-video-to-gif.gif">
+ 
 ## Emmanuel David / Z23619905
 
 ### Node.js Front-End and Back-End Implementation
