@@ -16,7 +16,11 @@
         <div class="navbar-header"></div>
         <ol class="nav navbar-nav">
           <li><a href="index.html">Home</a></li>
-          <li><a href="addStudent.html">Add Student</a></li>
+          <li>
+            <a style="background-color: #ddd" href="addStudent.html"
+              >Add Student</a
+            >
+          </li>
           <li><a href="updateStudent.html">Update Student</a></li>
           <li><a href="deleteStudent.html">Delete Student</a></li>
           <li><a href="displayStudent.html">Display Student</a></li>
@@ -47,34 +51,35 @@
       </select>
 
       <button class="btn-primary" onclick="addStudent()">Submit</button>
+
+      <br />
+      <br />
+      <div id="mydiv" name="mydiv"></div>
+      <script>
+        function addStudent() {
+          var fname_val = $("#fname").val();
+          var lname_val = $("#lname").val();
+          var gpa_val = $("#gpa").val();
+          var enrolled_val = $("#enrolled").val();
+          $.ajax({
+            url: "http://localhost:5678/students",
+            type: "post",
+            data: {
+              first_name: fname_val,
+              last_name: lname_val,
+              gpa: gpa_val,
+              enrolled: enrolled_val,
+            },
+            success: function () {
+              $("#mydiv").text("success");
+            },
+            error: function (xhr) {
+              $("#mydiv").text("error: " + xhr);
+            },
+          });
+        }
+      </script>
     </div>
-    <br />
-    <br />
-    <div id="mydiv" name="mydiv"></div>
-    <script>
-      function addStudent() {
-        var fname_val = $("#fname").val();
-        var lname_val = $("#lname").val();
-        var gpa_val = $("#gpa").val();
-        var enrolled_val = $("#enrolled").val();
-        $.ajax({
-          url: "http://localhost:5678/students",
-          type: "post",
-          data: {
-            first_name: fname_val,
-            last_name: lname_val,
-            gpa: gpa_val,
-            enrolled: enrolled_val,
-          },
-          success: function () {
-            $("#mydiv").text("success");
-          },
-          error: function (xhr) {
-            $("#mydiv").text("error: " + xhr);
-          },
-        });
-      }
-    </script>
 
     <footer class="container-fluid text-center">
       <p>Made by Emmanuel (Manny) David</p>

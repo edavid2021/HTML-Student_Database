@@ -38,7 +38,11 @@
           <li><a href="updateStudent.html">Update Student</a></li>
           <li><a href="deleteStudent.html">Delete Student</a></li>
           <li><a href="displayStudent.html">Display Student</a></li>
-          <li><a href="listStudents.html">List All</a></li>
+          <li>
+            <a style="background-color: #ddd" href="listStudents.html"
+              >List All</a
+            >
+          </li>
         </ol>
       </div>
     </nav>
@@ -79,13 +83,12 @@
             type: "get",
             success: function (response) {
               var temp = response.students;
-              console.log(temp.length);
+              console.log(temp.length + " students found");
 
               const table = document.getElementById("studentTable");
 
               // Loop through the JSON data and add rows to the table
               for (let i = 0; i < temp.length; i++) {
-                console.log(temp[i]);
                 const row = table.insertRow();
                 // Add cells to the row
                 const firstNameCell = row.insertCell();
@@ -102,9 +105,9 @@
 
                 const enrolledCell = row.insertCell();
                 enrolledCell.textContent = temp[i].enrolled;
-              }
 
-              $("#mydiv").text(temp1);
+                console.log(temp[i]); //keeps track of everything in the console
+              }
             },
             error: function (xhr) {
               $("#mydiv").text("error: " + xhr);
